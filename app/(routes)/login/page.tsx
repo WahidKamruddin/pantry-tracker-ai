@@ -4,7 +4,7 @@ import { googleSignIn, logOut, useUser } from "../../auth/auth"
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export default function login() {
+export default function Login() {
     const user = useUser();
 
     //redirects if the user is logged in already

@@ -5,7 +5,7 @@ import { Box, Stack, Typography, Button, Modal, TextField } from '@mui/material'
 import { firestore } from '../firebaseConfig/clientApp';
 import { collection, doc, getDocs, query, setDoc, deleteDoc, getDoc } from 'firebase/firestore';
 import { logOut, useUser } from '../auth/auth';
-import Link from 'next/link';
+import notLoggedIn from './notLoggedIn';
 
 const style = {
   position: 'absolute',
@@ -171,8 +171,7 @@ const Pantry = () => {
                 </div>
             ) : (
                 <div>
-                    <h1>You're not logged in, login here:</h1>
-                    <button className='p-10 bg-black text-white'><Link href="/login">Login</Link></button>
+                    {notLoggedIn()}
                 </div>
             )}
         </div>
